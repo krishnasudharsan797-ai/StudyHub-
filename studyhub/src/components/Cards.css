@@ -1,0 +1,25 @@
+.domain-card,
+.skill-card,
+.platform-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.domain-card:hover,
+.skill-card:hover,
+.platform-card:hover {
+  transform: translateY(-4px);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .domain-card,
+  .skill-card {
+    padding: 1.25rem;
+  }
+}
