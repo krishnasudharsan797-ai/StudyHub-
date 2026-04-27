@@ -3,7 +3,7 @@
  * Uses Vite proxy (/api → backend)
  */
 
-const API_BASE_URL = '/api/auth';
+const API_BASE_URL = 'https://studyhub-tzbe.onrender.com';
 
 // REGISTER
 export const registerUser = async (data) => {

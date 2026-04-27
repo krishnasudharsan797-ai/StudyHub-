@@ -13,10 +13,14 @@ connectDB();
 // MIDDLEWARE
 app.use(express.json());
 
-// ✅ SINGLE CLEAN CORS SETUP
+// ✅ FIXED CORS (WORKS FOR BOTH LOCAL + VERCEL)
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:3000',
+      'https://study-hub-t8s3.vercel.app/'
+    ],
     credentials: true,
   })
 );
@@ -35,9 +39,9 @@ app.get('/', (req, res) => {
 // ERROR HANDLER
 app.use(errorMiddleware);
 
-// START SERVER
+// START SERVER (RENDER SAFE)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
