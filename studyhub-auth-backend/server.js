@@ -17,14 +17,16 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      'http://localhost:5173',
-      'http://localhost:3000',
-      'https://study-hub-t8s3.vercel.app/'
+      "http://localhost:5173",
+      "https://study-hub-iota-five.vercel.app"
     ],
-    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true
   })
 );
 
+// IMPORTANT for preflight requests
+app.options("*", cors());
 // ROUTES
 app.use('/api/auth', authRoutes);
 
