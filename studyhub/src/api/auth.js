@@ -1,9 +1,9 @@
 /**
  * Frontend API layer for authentication
- * Uses Vite proxy (/api → backend)
+ * Production-ready (Vercel + Render)
  */
 
-const API_BASE_URL = 'https://studyhub-tzbe.onrender.com';
+const API_BASE_URL = "https://studyhub-tzbe.onrender.com/api/auth";
 
 // REGISTER
 export const registerUser = async (data) => {
@@ -51,7 +51,7 @@ export const loginUser = async (data) => {
   }
 };
 
-// PROFILE (protected route)
+// PROFILE
 export const getProfile = async (token) => {
   try {
     const response = await fetch(`${API_BASE_URL}/profile`, {
